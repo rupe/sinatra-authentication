@@ -34,6 +34,7 @@ module Sinatra
         login_required
 
         if params[:id].to_i != current_user.id and !current_user.admin?
+          flash[:error] = "You don't have permission to view this user's information."
           redirect "/"
         end
         @user = User.get(:id => params[:id])
