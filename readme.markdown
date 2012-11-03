@@ -1,3 +1,8 @@
+## CHANGES MADE BY RUPE:
+
+* default views use TWitter Bootstrap styles
+* removed
+
 ### A little sinatra gem that implements user authentication, with support for Datamapper, Mongomapper, Mongoid, Sequel and Rufus-Tokyo
 
 ## INSTALLATION:
