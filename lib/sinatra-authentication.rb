@@ -96,10 +96,16 @@ module Sinatra
         redirect return_to
       end
 
-      app.get '/signup/?' do
+      app.get '/signup/:what/?' do
         if session[:user]
           redirect '/'
         else
+          if (!settings.invite && settings.signup_closed)
+            if Rack.const_defined?('Flash')
+              flash[:error] = "We are sorry, but we are not accepting new #{params[:what] || 'members'} at this time."
+            end
+            redirect '/'
+          end
           send settings.template_engine, get_view_as_string("signup.#{settings.template_engine}"), :layout => use_layout?
         end
       end
@@ -107,7 +113,7 @@ module Sinatra
       app.post '/signup/?' do
         if (!settings.invite && settings.signup_closed)
           if Rack.const_defined?('Flash')
-            flash[:error] = "We are sorry, but we are not accepting new members at the moement."
+            redirect '/signup'
           end
           redirect '/'
         end
