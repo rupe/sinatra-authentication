@@ -105,7 +105,7 @@ module Sinatra
       end
 
       app.post '/signup/?' do
-        if !:invite && :signup_closed
+        if (!settings.invite && settings.signup_closed)
           if Rack.const_defined?('Flash')
             flash[:error] = "We are sorry, but we are not accepting new members at the moement."
           end
