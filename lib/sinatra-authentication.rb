@@ -96,7 +96,7 @@ module Sinatra
         redirect return_to
       end
 
-      app.get '/signup/:what/?' do
+      app.get '/signup/?:what?' do
         if session[:user]
           redirect '/'
         else
