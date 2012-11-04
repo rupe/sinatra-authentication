@@ -17,6 +17,12 @@ module Sinatra
       unless defined?(settings.auth_use_layout)
         app.set :auth_use_layout, true
       end
+      unless defined?(settings.invite)
+        app.set :invite, false
+      end
+      unless defined?(settings.signup_closed)
+        app.set :signup_closed, false
+      end
 
       app.get '/users/?' do
         login_required
@@ -99,6 +105,12 @@ module Sinatra
       end
 
       app.post '/signup/?' do
+        if !:invite && :signup_closed
+          if Rack.const_defined?('Flash')
+            flash[:error] = "We are sorry, but we are not accepting new members at the moement."
+          end
+          redirect '/'
+        end
         @user = User.set(params[:user])
         if @user.valid && @user.id
           session[:user] = @user.id
