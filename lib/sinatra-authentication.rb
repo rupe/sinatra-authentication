@@ -30,7 +30,7 @@ module Sinatra
 
         @users = User.all
         if @users != []
-          send settings.template_engine, get_view_as_string("index.#{settings.template_engine}"), :layout => use_layout?
+          send settings.template_engine, get_view_as_string("sa_index.#{settings.template_engine}"), :layout => use_layout?
         else
           redirect '/signup'
         end
@@ -44,7 +44,7 @@ module Sinatra
           redirect "/"
         end
         @user = User.get(:id => params[:id])
-        send settings.template_engine,  get_view_as_string("show.#{settings.template_engine}"), :layout => use_layout?
+        send settings.template_engine,  get_view_as_string("sa_show.#{settings.template_engine}"), :layout => use_layout?
       end
 
       #convenience for ajax but maybe entirely stupid and unnecesary
@@ -60,7 +60,7 @@ module Sinatra
         if session[:user]
           redirect '/'
         else
-          send settings.template_engine, get_view_as_string("login.#{settings.template_engine}"), :layout => use_layout?
+          send settings.template_engine, get_view_as_string("sa_login.#{settings.template_engine}"), :layout => use_layout?
         end
       end
 
@@ -106,7 +106,7 @@ module Sinatra
             end
             redirect '/'
           end
-          send settings.template_engine, get_view_as_string("signup.#{settings.template_engine}"), :layout => use_layout?
+          send settings.template_engine, get_view_as_string("sa_signup.#{settings.template_engine}"), :layout => use_layout?
         end
       end
 
@@ -136,7 +136,7 @@ module Sinatra
         login_required
         redirect "/users" unless current_user.admin? || current_user.id.to_s == params[:id]
         @user = User.get(:id => params[:id])
-        send settings.template_engine, get_view_as_string("edit.#{settings.template_engine}"), :layout => use_layout?
+        send settings.template_engine, get_view_as_string("sa_edit.#{settings.template_engine}"), :layout => use_layout?
       end
 
       app.post '/users/:id/edit/?' do

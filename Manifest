@@ -6,11 +6,11 @@ lib/models/abstract_user.rb
 lib/models/datamapper_user.rb
 lib/models/dm_adapter.rb
 lib/sinatra-authentication.rb
-lib/views/edit.haml
-lib/views/index.haml
-lib/views/login.haml
-lib/views/show.haml
-lib/views/signup.haml
+lib/views/sa_edit.haml
+lib/views/sa_index.haml
+lib/views/sa_login.haml
+lib/views/sa_show.haml
+lib/views/sa_signup.haml
 readme.markdown
 test/datamapper_test.rb
 test/lib/dm_app.rb
