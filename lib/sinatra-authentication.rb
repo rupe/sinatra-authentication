@@ -154,7 +154,8 @@ module Sinatra
           if Rack.const_defined?('Flash')
             flash[:notice] = 'Account updated.'
           end
-          redirect '/'
+          return_to = ( session[:return_to] ? session[:return_to] : '/' )
+          redirect return_to
         else
           if Rack.const_defined?('Flash')
             flash[:error] = "Whoops, looks like there were some problems with your updates: #{user.errors}."
@@ -176,7 +177,8 @@ module Sinatra
             flash[:error] = "Deletion failed."
           end
         end
-        redirect '/'
+        return_to = ( session[:return_to] ? session[:return_to] : '/' )
+        redirect return_to
       end
 
 
