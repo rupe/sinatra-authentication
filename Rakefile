@@ -7,9 +7,9 @@ begin
   
   Jeweler::Tasks.new do |gemspec|
     gemspec.name           = 'sinatra-authentication'
-    gemspec.version        = '0.4.1.1'
+    gemspec.version        = '0.4.2.1'
     gemspec.description    = "Simple authentication plugin for sinatra."
-    gemspec.summary        = "Simple authentication plugin for sinatra (0.4.1.1 mods by rupe)."
+    gemspec.summary        = "Simple authentication plugin for sinatra (0.4.2.1 mods by rupe)."
     gemspec.homepage       = "http://github.com/maxjustus/sinatra-authentication"
     gemspec.author         = "Max Justus Spransy"
     gemspec.email          = "maxjustus@gmail.com"
