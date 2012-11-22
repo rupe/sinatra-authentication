@@ -14,12 +14,6 @@ end
 # HAML
 # gem 'haml'
 #
-# Mongoid
-# gem 'mongoid'
-# 
-# MongoMapper
-# gem 'mongo_mapper'
-#
 # Active Record
 # gem 'activerecord'
 #
@@ -28,6 +22,4 @@ end
 #
 # Sequel
 # gem 'sequel'
-#
-# Rufus Tokyo
-# gem 'rufus-tokyo'
+
