@@ -1,5 +1,4 @@
 source :rubygems
-gemspec # include gems from gemspec
 
 group :test do
   gem 'rake'

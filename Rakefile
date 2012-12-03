@@ -11,7 +11,7 @@ begin
     gemspec.description    = "Simple authentication plugin for sinatra."
     gemspec.summary        = "Simple authentication plugin for sinatra (0.4.2.1 mods by rupe)."
     gemspec.homepage       = "http://github.com/maxjustus/sinatra-authentication"
-    gemspec.author         = "Max Justus Spransy"
+    gemspec.author         = ["Max Justus Spransy", "rupe"]
     gemspec.email          = "maxjustus@gmail.com"
     gemspec.add_dependency "sinatra"
     gemspec.add_dependency "dm-core"
@@ -20,7 +20,7 @@ begin
     gemspec.add_dependency "dm-timestamps"
     gemspec.add_dependency "rack-flash3"
   end
-  Jeweler::GemcutterTasks.new
+#  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it first!"
 end

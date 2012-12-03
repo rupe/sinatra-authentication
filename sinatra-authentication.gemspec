@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.version = "0.4.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Max Justus Spransy"]
-  s.date = "2012-11-22"
+  s.authors = ["Max Justus Spransy", "rupe"]
+  s.date = "2012-12-02"
   s.description = "Simple authentication plugin for sinatra."
   s.email = "maxjustus@gmail.com"
   s.extra_rdoc_files = [
@@ -79,7 +79,6 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<sinatra-authentication>, [">= 0"])
       s.add_runtime_dependency(%q<sinatra>, [">= 0"])
       s.add_runtime_dependency(%q<dm-core>, [">= 0"])
       s.add_runtime_dependency(%q<dm-migrations>, [">= 0"])
@@ -87,7 +86,6 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<dm-timestamps>, [">= 0"])
       s.add_runtime_dependency(%q<rack-flash3>, [">= 0"])
     else
-      s.add_dependency(%q<sinatra-authentication>, [">= 0"])
       s.add_dependency(%q<sinatra>, [">= 0"])
       s.add_dependency(%q<dm-core>, [">= 0"])
       s.add_dependency(%q<dm-migrations>, [">= 0"])
@@ -96,7 +94,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rack-flash3>, [">= 0"])
     end
   else
-    s.add_dependency(%q<sinatra-authentication>, [">= 0"])
     s.add_dependency(%q<sinatra>, [">= 0"])
     s.add_dependency(%q<dm-core>, [">= 0"])
     s.add_dependency(%q<dm-migrations>, [">= 0"])
